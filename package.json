@@ -1,0 +1,26 @@
+{
+  "name": "chakra-journal-api",
+  "version": "1.0.0",
+  "description": "This app is designed to promote mindful living and to empower users with the skills and knowledge to balance their own Chakras. It’s essentially a Chakra journal, that provides recommendations based on how the user is feeling mentally, physically, and energetically.",
+  "main": "seed.js",
+  "dependencies": {
+    "express": "^4.17.1",
+    "mongoose": "^5.10.0",
+    "passport": "^0.4.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Ckirk9/chakra-journal-api.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Ckirk9/chakra-journal-api/issues"
+  },
+  "homepage": "https://github.com/Ckirk9/chakra-journal-api#readme"
+}
