@@ -1,8 +1,16 @@
 const mongoose = require('mongoose')
 const User = require('./User')
 
-const entrySchema = new mongoose.Schema ({
+const EntrySchema = new mongoose.Schema ({
+    entryDate: {type: Date, required: true},
     preferences: {},
+    assessmentResults: {},
+    body: {type: String, required: false},
+    User: [{
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'User',
+        required: true
+    }]
 
 })
 

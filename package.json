@@ -5,6 +5,7 @@
   "main": "seed.js",
   "dependencies": {
     "express": "^4.17.1",
+    "method-override": "^3.0.0",
     "mongoose": "^5.10.0",
     "passport": "^0.4.1"
   },
