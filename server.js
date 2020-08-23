@@ -1,5 +1,8 @@
 const express = require('express')
 const app = express()
+//const routes = require('./routes')
+//const cors = require('cors')
+
 const mongoose = require('mongoose')
 
 
@@ -26,7 +29,11 @@ db.on('error', (err) => {
     console.log('Mongoose error:', (err))
 })
 
+// middleware - JSON parsing
+app.use(express.json());
 
+// middleware - cors config
+// app.use(cors())
 
 
 app.listen(3000, () => {
