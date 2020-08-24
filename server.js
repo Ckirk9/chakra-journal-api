@@ -32,7 +32,7 @@ const corsOptions = {
 }
 
 app.use(session({
-    store: new MongoStore({ url: process.env.MONGODB_URI  ||  'mongodb://localhost:27017/chakrajournal'}), 
+    store: new MongoStore({ url: /* process.env.MONGODB_URI  || */  'mongodb://localhost:27017/chakrajournal'}), 
     secret: "IHaveTwoDogs",
     resave: false,
     saveUninitialized: false, 
