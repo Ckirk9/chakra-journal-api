@@ -14,6 +14,9 @@ const configOptions = {
 
 mongoose.connect(connectionString, configOptions)
     .then(() => console.log('MongoDB connected'))
-    .catch(err => console.log(`MongoDB connection: ${err}`))
+    .catch(err => console.log(`MongoDB connection error: ${err}`))
 
-
+module.exports = {
+    Entry: require('./Entry'),
+    User: require('./User')
+}

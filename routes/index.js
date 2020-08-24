@@ -1,4 +1,6 @@
 module.exports = {
-    chakras: require('../controllers/users'),
-    chakras: require('../controllers/entries')
+    users: require('../controllers/users'),
+    entries: require('../controllers/entries'),
+    auth: require('./auth')
+
 }

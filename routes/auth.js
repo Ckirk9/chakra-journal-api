@@ -7,6 +7,6 @@ router.post('/login', passport.authenticate('local'), ctrl.auth.login)
 router.post('/signUp', ctrl.auth.signUp)
 router.delete('/signOut', ctrl.auth.signOut)
 // utility route for devs
-router.get('/verify', ctrl.auth.verify)
+//router.get('/verify', ctrl.auth.verify)
 
 module.exports = router

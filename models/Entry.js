@@ -14,5 +14,5 @@ const EntrySchema = new mongoose.Schema ({
 
 })
 
-const Entry = mongoose.model('Entry', entrySchema)
+const Entry = mongoose.model('Entry', EntrySchema)
 module.exports = Entry
