@@ -10,7 +10,7 @@ const index = (req, res) => {
 
         res.json({ entries: foundEntries})
     })
-},
+}
 
 const show = (req, res) => {
     db.Entry.findById(req.params.id, (err, foundEntry) => {
@@ -20,7 +20,7 @@ const show = (req, res) => {
         })
         res.json({ entry: foundEntry})
     })
-},
+}
 
 const create = (req, res) => {
     db.Entry.create(req.body, (err, savedEntry) => {

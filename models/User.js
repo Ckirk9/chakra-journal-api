@@ -5,7 +5,7 @@ const Entry = require('./Entry')
 const UserSchema = new mongoose.Schema({
     userName: {type: String, required: true },
     password: {type: String, required: true},
-    preferences: {type: Boolean, required: false},
+    preferences: [{type: String, required: false}],
     entries: [{type: mongoose.Schema.Types.ObjectId, 
         ref: 'Entry', 
         required: false
@@ -28,8 +28,9 @@ UserSchema.pre('save', function(next) {
         next()
     } else {
         this.password = this.hashPassword(this.password)
+        next()
     }
 })
 
-const User = mongoose.model('User', userSchema)
+const User = mongoose.model('User', UserSchema)
 module.exports = User
