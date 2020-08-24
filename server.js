@@ -1,9 +1,12 @@
+//imports
 const express = require('express')
 const app = express()
 const routes = require('./routes')
 const cors = require('cors')
 const session = require('express-session')
 const MongoStore = require('connect-mongo')(session)
+require("dotenv").config()
+const passport = require('./passport')
 
 const port = process.env.Port || 5000
 
@@ -16,16 +19,17 @@ const port = process.env.Port || 5000
 //     useFindAndModify: false
 // })
 
+
+
+// middleware - JSON parsing
+app.use(express.json());
+
 // middleware - cors config
 const corsOptions = {
     origin: ['http://localhost:5000'],
     credentials: true, 
     optionsSuccessStatus: 204
 }
-
-// db.on('connected', () => {
-//     console.log(`Mongoose connected to ${connectionString}`)
-// })
 
 app.use(session({
     store: new MongoStore({ url: process.env.MONGODB_URI  ||  'mongodb://localhost:27017/chakrajournal'}), 
@@ -37,14 +41,16 @@ app.use(session({
     }
 }))
 
+//middleware- passport config
+app.use(passport.initialize())
+app.use(passport.session())
 
-// middleware - JSON parsing
-app.use(express.json());
+//middleware- API routes
+// app.use('/api/v1/ ', routes. )
+app.use('/api/v1/auth', routes.auth)
 
-// middleware - cors config
-// app.use(cors())
 
 
 app.listen(5000, () => {
-    console.log('server listening')
+    console.log('listening on port: ' + process.env.PORT)
 })
