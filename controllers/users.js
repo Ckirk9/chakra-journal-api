@@ -10,7 +10,7 @@ const index = (req, res) => {
 
         res.json({ users: foundUsers})
     })
-},
+}
 
 const show = (req, res) => {
     db.User.findById(req.params.id, (err, foundUser) => {
@@ -20,7 +20,7 @@ const show = (req, res) => {
         })
         res.json({ user: foundUser})
     })
-},
+}
 
 const create = (req, res) => {
     db.User.create(req.body, (err, savedUser) => {

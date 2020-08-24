@@ -28,6 +28,7 @@ UserSchema.pre('save', function(next) {
         next()
     } else {
         this.password = this.hashPassword(this.password)
+        next()
     }
 })
 

@@ -1,25 +1,19 @@
-// const mongoose = require('mongoose')
+const mongoose = require('mongoose')
 
 
-// const connectionString = 'mongodb://localhost/chakrajournal'
+const connectionString = process.env.MONGODB_URI || 'mongodb://localhost/chakrajournal'
+console.log('Connection string: ', connectionString);
 
-// mongoose.connect(connectionString, {
-//     useNewUrlParser: true,
-//     useUnifiedTopology: true,
-//     useCreateIndex: true,
-//     useFindAndModify: false
-// })
 
-// const db = mongoose.connection
+const configOptions = {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+    useCreateIndex: true,
+    useFindAndModify: false
+}
 
-// db.on('connected', () => {
-//     console.log(`Mongoose connected to ${connectionString}`)
-// })
+mongoose.connect(connectionString, configOptions)
+    .then(() => console.log('MongoDB connected'))
+    .catch(err => console.log(`MongoDB connection: ${err}`))
 
-// db.on('disconnected', () => {
-//     console.log('Mongoose Disconnected')
-// })
 
-// db.on('error', (err) => {
-//     console.log('Mongoose error:', (err))
-// })
