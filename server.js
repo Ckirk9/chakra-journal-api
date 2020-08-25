@@ -26,7 +26,7 @@ app.use(express.json());
 
 // middleware - cors config
 const corsOptions = {
-    origin: ['http://localhost:5000'],
+    origin: ['http://localhost:3000'],
     credentials: true, 
     optionsSuccessStatus: 204
 }
@@ -50,9 +50,6 @@ app.use(passport.session())
 //middleware- API routes
 // app.use('/api/v1/ ', routes. )
 app.use('/api/v1/auth', routes.auth)
-
-
-
 
 
 app.listen(5000, () => {
