@@ -31,6 +31,8 @@ const corsOptions = {
     optionsSuccessStatus: 204
 }
 
+app.use(cors(corsOptions))
+
 app.use(session({
     store: new MongoStore({ url: /* process.env.MONGODB_URI  || */  'mongodb://localhost:27017/chakrajournal'}), 
     secret: "IHaveTwoDogs",
@@ -48,6 +50,8 @@ app.use(passport.session())
 //middleware- API routes
 // app.use('/api/v1/ ', routes. )
 app.use('/api/v1/auth', routes.auth)
+
+
 
 
 
