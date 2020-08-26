@@ -1,8 +1,9 @@
 const db = require('../models')
 
 const index = (req, res) => {
-    console.log('Entries Index route being called');
-    db.Entry.find({}, (err, foundEntries) => {
+    const userName = req.params.userName;
+    console.log('Req params: ', req.params);
+    db.Entry.find({ user: userName }, (err, foundEntries) => {
         if (err) console.log('Error in entries#index:', err)
 
         if(!foundEntries.length) return res.json({

@@ -10,17 +10,6 @@ const passport = require('./passport')
 
 const port = process.env.Port || 5000
 
-// const connectionString = 'mongodb://localhost/chakrajournal'
-// const db = mongoose.connection
-// mongoose.connect(connectionString, {
-//     useNewUrlParser: true,
-//     useUnifiedTopology: true,
-//     useCreateIndex: true,
-//     useFindAndModify: false
-// })
-
-
-
 // middleware - JSON parsing
 app.use(express.json());
 
@@ -34,7 +23,7 @@ const corsOptions = {
 app.use(cors(corsOptions))
 
 app.use(session({
-    store: new MongoStore({ url: /* process.env.MONGODB_URI  || */  'mongodb://localhost:27017/chakrajournal'}), 
+    store: new MongoStore({ url: process.env.MONGODB_URI  ||  'mongodb://localhost:27017/chakrajournal'}), 
     secret: "IHaveTwoDogs",
     resave: false,
     saveUninitialized: false, 
