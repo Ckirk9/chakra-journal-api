@@ -1,6 +1,7 @@
 const db = require('../models')
 
 const index = (req, res) => {
+    console.log('Entries Index route being called');
     db.Entry.find({}, (err, foundEntries) => {
         if (err) console.log('Error in entries#index:', err)
 
