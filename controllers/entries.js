@@ -36,7 +36,7 @@ const update = (req, res) => {
         if (err) console.log('error in update entry:', err)
         res.json({
             entry: updatedEntry, 
-            message: `${updatedEntry.date} was updated successfully`
+            message: `${updatedEntry.entryDate} was updated successfully`
         })
     })
 }

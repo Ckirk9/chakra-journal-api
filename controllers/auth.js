@@ -37,6 +37,7 @@ const signUp = (req, res) => {
             if (err) {
                 res.json(err)
             }
+            delete savedUser.password
             res.json(savedUser)
         })
         console.log("End save user");
@@ -47,7 +48,7 @@ const signOut = (req, res) => {
     if (!req.user) return res.json({
         message: 'no user to sign out'
     })
-    req.signOut()
+    req.logout()
     res.json({ message: 'user signed out'})
 }
 
