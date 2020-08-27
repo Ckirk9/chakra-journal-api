@@ -6,10 +6,6 @@ const UserSchema = new mongoose.Schema({
     userName: {type: String, required: true },
     password: {type: String, required: true},
     //preferences: [{type: String, required: false}],
-    entries: [{type: mongoose.Schema.Types.ObjectId, 
-        ref: 'Entry', 
-        required: false
-    }]
 })
 
 UserSchema.methods = {
