@@ -4,9 +4,16 @@
   "description": "This app is designed to promote mindful living and to empower users with the skills and knowledge to balance their own Chakras. It’s essentially a Chakra journal, that provides recommendations based on how the user is feeling mentally, physically, and energetically.",
   "main": "seed.js",
   "dependencies": {
+    "bcrypt": "^5.0.0",
+    "connect-mongo": "^3.2.0",
+    "cors": "^2.8.5",
+    "dotenv": "^8.2.0",
     "express": "^4.17.1",
+    "express-session": "^1.17.1",
+    "method-override": "^3.0.0",
     "mongoose": "^5.10.0",
-    "passport": "^0.4.1"
+    "passport": "^0.4.1",
+    "passport-local": "^1.0.0"
   },
   "devDependencies": {},
   "scripts": {
