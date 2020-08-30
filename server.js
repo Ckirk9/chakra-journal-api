@@ -43,6 +43,6 @@ app.use('/api/v1/entries', routes.entries)
 app.use('/api/v1/auth', routes.auth)
 
 
-app.listen(5000, () => {
+app.listen(process.env.PORT || 5000, () => {
     console.log('listening on port: ' + process.env.PORT)
 })
