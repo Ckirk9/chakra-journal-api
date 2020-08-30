@@ -1,8 +1,7 @@
 const db = require('../models')
 
 const index = (req, res) => {
-    const userName = req.params.userName;
-    console.log('Req params: ', req.params);
+    const userName = req.params.user;
     db.Entry.find({ user: userName }, (err, foundEntries) => {
         if (err) console.log('Error in entries#index:', err)
 
