@@ -14,8 +14,9 @@ const port = process.env.Port || 5000
 app.use(express.json());
 
 // middleware - cors config
+const originURL = process.env.REACT_APP_API_URL || 'http://localhost:3000';
 const corsOptions = {
-    origin: ['http://localhost:3000'],
+    origin: [originURL],
     credentials: true, 
     optionsSuccessStatus: 204
 }
