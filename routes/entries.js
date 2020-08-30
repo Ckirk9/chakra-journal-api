@@ -3,7 +3,7 @@ const router = require('express').Router()
 const ctrl = require('../controllers')
 
 // routes
-router.get('/userEntries/:userName', ctrl.entries.index)
+router.get('/userEntries/:user ', ctrl.entries.index)
 router.get('/:id', ctrl.entries.show)
 router.post('/', ctrl.entries.create)
 router.put('/:id', ctrl.entries.update)
